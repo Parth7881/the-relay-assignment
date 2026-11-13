@@ -1,0 +1,241 @@
+{
+  "schema_version": 1,
+  "source_files": [
+    "runs\\formal-experiments\\36dd7fe7e18b4b8185f90475bff06d26\\results.csv",
+    "runs\\formal-experiments\\7c3d64d72cda49308a28d41c206b34e1\\results.csv",
+    "runs\\formal-experiments\\94cc1b31966a48f399df49e9511a8f95\\results.csv",
+    "runs\\formal-experiments\\fd25f2674dd0409b80e2154d0c068e18\\results.csv",
+    "runs\\formal-experiments\\ff2e702330d14df7aea3035fd9e24221\\results.csv",
+    "runs\\calibration-8fadd30233cd4bf49e305085b7217c96.json",
+    "runs\\groq-service-facts.json",
+    "runs\\quality-evaluation.json",
+    "runs\\grading-decisions.json"
+  ],
+  "percentile_method": "linear interpolation over observed request values",
+  "efficiency_method": "all known consumed work divided by delivered answers; unknown usage or cost keeps the corresponding metric null",
+  "service_limits": [
+    {
+      "limit": "requests/min",
+      "value_found": 30,
+      "how_found": "official documentation; not stress-tested",
+      "confidence": "medium"
+    },
+    {
+      "limit": "tokens/min",
+      "value_found": "8000",
+      "how_found": "real response headers and official documentation",
+      "confidence": "high"
+    },
+    {
+      "limit": "requests/day",
+      "value_found": "1000",
+      "how_found": "real response headers and official documentation",
+      "confidence": "high"
+    },
+    {
+      "limit": "tokens/day",
+      "value_found": 200000,
+      "how_found": "official documentation; not exhausted at provider",
+      "confidence": "medium"
+    },
+    {
+      "limit": "requests in flight",
+      "value_found": "at least 2; maximum not measured",
+      "how_found": "successful real calibration concurrency",
+      "confidence": "low"
+    },
+    {
+      "limit": "limit response",
+      "value_found": "not measured; documentation specifies HTTP 429 + Retry-After",
+      "how_found": "observed HTTP statuses [200]; documentation",
+      "confidence": "low"
+    },
+    {
+      "limit": "recovery time",
+      "value_found": "not measured",
+      "how_found": "real limit was not deliberately reached",
+      "confidence": "low"
+    }
+  ],
+  "calibration": {
+    "attempts": 12,
+    "successful_attempts": 12,
+    "median_first_token_ms": 483.9,
+    "median_total_ms": 485.8,
+    "tokens_total": 4608,
+    "retries": 0,
+    "observed_http_statuses": [
+      200
+    ]
+  },
+  "scenario_runs": [
+    {
+      "run_id": "36dd7fe7e18b4b8185f90475bff06d26",
+      "scenario": "daily_budget_exhausted",
+      "source": "stand-in",
+      "count": 4,
+      "duration_s": 2.092,
+      "offered_rate_per_min": 30.0,
+      "ttft_p50_ms": 1824.4,
+      "ttft_p95_ms": 2084.4,
+      "ttft_p99_ms": 2085.3,
+      "total_p50_ms": 1826.5,
+      "total_p95_ms": 2085.8,
+      "total_p99_ms": 2086.7,
+      "success_pct": 0.0,
+      "rate_limited_pct": 100.0,
+      "timeout_or_given_up_pct": 0.0,
+      "retries_per_request": 0.0,
+      "peak_queue_length": 1,
+      "delivered_answers": 0,
+      "tokens_per_answer": null,
+      "token_usage_coverage_pct": 50.0,
+      "cost_per_1000_answers_usd": null
+    },
+    {
+      "run_id": "7c3d64d72cda49308a28d41c206b34e1",
+      "scenario": "steady",
+      "source": "stand-in",
+      "count": 3,
+      "duration_s": 162.593,
+      "offered_rate_per_min": 0.75,
+      "ttft_p50_ms": 2574.6,
+      "ttft_p95_ms": 2740.4,
+      "ttft_p99_ms": 2755.1,
+      "total_p50_ms": 2576.0,
+      "total_p95_ms": 2741.7,
+      "total_p99_ms": 2756.4,
+      "success_pct": 100.0,
+      "rate_limited_pct": 0.0,
+      "timeout_or_given_up_pct": 0.0,
+      "retries_per_request": 0.0,
+      "peak_queue_length": 0,
+      "delivered_answers": 0,
+      "tokens_per_answer": null,
+      "token_usage_coverage_pct": 100.0,
+      "cost_per_1000_answers_usd": null
+    },
+    {
+      "run_id": "94cc1b31966a48f399df49e9511a8f95",
+      "scenario": "minute_limit_halved",
+      "source": "stand-in",
+      "count": 3,
+      "duration_s": 161.811,
+      "offered_rate_per_min": 0.75,
+      "ttft_p50_ms": 1799.1,
+      "ttft_p95_ms": 1966.4,
+      "ttft_p99_ms": 1981.3,
+      "total_p50_ms": 1800.5,
+      "total_p95_ms": 1967.7,
+      "total_p99_ms": 1982.5,
+      "success_pct": 0.0,
+      "rate_limited_pct": 100.0,
+      "timeout_or_given_up_pct": 0.0,
+      "retries_per_request": 0.0,
+      "peak_queue_length": 0,
+      "delivered_answers": 0,
+      "tokens_per_answer": null,
+      "token_usage_coverage_pct": 100.0,
+      "cost_per_1000_answers_usd": null
+    },
+    {
+      "run_id": "fd25f2674dd0409b80e2154d0c068e18",
+      "scenario": "sustained_overload",
+      "source": "stand-in",
+      "count": 24,
+      "duration_s": 115.663,
+      "offered_rate_per_min": 12.0,
+      "ttft_p50_ms": 655.7,
+      "ttft_p95_ms": 2566.3,
+      "ttft_p99_ms": 3036.4,
+      "total_p50_ms": 657.2,
+      "total_p95_ms": 2567.8,
+      "total_p99_ms": 3037.8,
+      "success_pct": 8.3,
+      "rate_limited_pct": 91.7,
+      "timeout_or_given_up_pct": 0.0,
+      "retries_per_request": 0.0,
+      "peak_queue_length": 0,
+      "delivered_answers": 0,
+      "tokens_per_answer": null,
+      "token_usage_coverage_pct": 100.0,
+      "cost_per_1000_answers_usd": null
+    },
+    {
+      "run_id": "ff2e702330d14df7aea3035fd9e24221",
+      "scenario": "burst",
+      "source": "stand-in",
+      "count": 12,
+      "duration_s": 7.423,
+      "offered_rate_per_min": 30.0,
+      "ttft_p50_ms": 6046.4,
+      "ttft_p95_ms": 7384.5,
+      "ttft_p99_ms": 7403.4,
+      "total_p50_ms": 6048.4,
+      "total_p95_ms": 7387.0,
+      "total_p99_ms": 7405.3,
+      "success_pct": 8.3,
+      "rate_limited_pct": 91.7,
+      "timeout_or_given_up_pct": 0.0,
+      "retries_per_request": 0.0,
+      "peak_queue_length": 8,
+      "delivered_answers": 0,
+      "tokens_per_answer": null,
+      "token_usage_coverage_pct": 100.0,
+      "cost_per_1000_answers_usd": null
+    }
+  ],
+  "retrieval_quality": {
+    "status": "ready",
+    "rows": [
+      {
+        "retrieval_setting": "hybrid-minilm220-rrf-k4-v1",
+        "questions": 14,
+        "questions_attempted": 14,
+        "responses_graded": 14,
+        "correct_and_cited_pct": 57.1,
+        "wrong_pct": 21.4,
+        "correctly_refused_pct": 21.4,
+        "wrong_refusal_count": 3,
+        "tokens_per_answer": 4106.5,
+        "token_usage_coverage_pct": 100.0,
+        "ttft_p50_ms": null,
+        "ttft_p95_ms": null,
+        "total_p50_ms": 1528.9,
+        "total_p95_ms": 2916.9
+      },
+      {
+        "retrieval_setting": "hybrid-minilm220-rrf-rerank-k4-v1",
+        "questions": 14,
+        "questions_attempted": 14,
+        "responses_graded": 14,
+        "correct_and_cited_pct": 50.0,
+        "wrong_pct": 28.6,
+        "correctly_refused_pct": 21.4,
+        "wrong_refusal_count": 4,
+        "tokens_per_answer": 3753.1,
+        "token_usage_coverage_pct": 100.0,
+        "ttft_p50_ms": null,
+        "ttft_p95_ms": null,
+        "total_p50_ms": 2407.2,
+        "total_p95_ms": 13219.4
+      },
+      {
+        "retrieval_setting": "lexical-word180-k4-v1",
+        "questions": 14,
+        "questions_attempted": 15,
+        "responses_graded": 14,
+        "correct_and_cited_pct": 50.0,
+        "wrong_pct": 28.6,
+        "correctly_refused_pct": 21.4,
+        "wrong_refusal_count": 4,
+        "tokens_per_answer": 4648.5,
+        "token_usage_coverage_pct": 100.0,
+        "ttft_p50_ms": null,
+        "ttft_p95_ms": null,
+        "total_p50_ms": 1481.4,
+        "total_p95_ms": 23126.9
+      }
+    ]
+  }
+}

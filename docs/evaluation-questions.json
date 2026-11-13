@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "review_status": "approved_by_user",
+  "questions": [
+    {
+      "id": "transformer-recurrence",
+      "question": "What mechanism does the Transformer rely on instead of recurrence?",
+      "answerability": "answerable",
+      "expected_papers": ["1706.03762v7"],
+      "rationale": "Checks the central architectural claim in the Transformer paper.",
+      "origin": "assistant_draft"
+    },
+    {
+      "id": "transformer-scale",
+      "question": "Why is the dot product divided by the square root of the key dimension in scaled dot-product attention?",
+      "answerability": "answerable",
+      "expected_papers": ["1706.03762v7"],
+      "rationale": "Requires the paper's qualification about large dot products and softmax gradients.",
+      "origin": "assistant_draft"
+    },
+    {
+      "id": "transformer-multihead",
+      "question": "What does multi-head attention allow the model to attend to jointly?",
+      "answerability": "answerable",
+      "expected_papers": ["1706.03762v7"],
+      "rationale": "Targets a compact passage about representation subspaces and positions.",
+      "origin": "assistant_draft"
+    },
+    {
+      "id": "transformer-decoder-mask",
+      "question": "How does the Transformer decoder prevent a position from attending to later positions?",
+      "answerability": "answerable",
+      "expected_papers": ["1706.03762v7"],
+      "rationale": "Tests retrieval of the decoder masking explanation rather than a generic attention passage.",
+      "origin": "assistant_draft"
+    },
+    {
+      "id": "transformer-position",
+      "question": "How are token order and position represented when the Transformer has no recurrence or convolution?",
+      "answerability": "answerable",
+      "expected_papers": ["1706.03762v7"],
+      "rationale": "Targets positional encoding and its placement in the architecture.",
+      "origin": "assistant_draft"
+    },
+    {
+      "id": "transformer-head-cost",
+      "question": "Why is eight-head attention described as having similar total computational cost to one full-dimensional head?",
+      "answerability": "answerable",
+      "expected_papers": ["1706.03762v7"],
+      "rationale": "Requires the dimensionality qualification attached to the head count.",
+      "origin": "assistant_draft"
+    },
+    {
+      "id": "moshi-full-duplex",
+      "question": "What does full-duplex spoken dialogue mean in Moshi's interaction setting?",
+      "answerability": "answerable",
+      "expected_papers": ["2410.00037v1"],
+      "rationale": "Checks Moshi's simultaneous listening and speaking objective.",
+      "origin": "assistant_draft"
+    },
+    {
+      "id": "moshi-inner-monologue",
+      "question": "What role does Moshi's text inner monologue play alongside acoustic tokens?",
+      "answerability": "answerable",
+      "expected_papers": ["2410.00037v1"],
+      "rationale": "Targets the joint speech-text representation rather than generic language modelling.",
+      "origin": "assistant_draft"
+    },
+    {
+      "id": "moshi-mimi",
+      "question": "What is Mimi used for in the Moshi system?",
+      "answerability": "answerable",
+      "expected_papers": ["2410.00037v1"],
+      "rationale": "Tests retrieval of the named neural audio codec component.",
+      "origin": "assistant_draft"
+    },
+    {
+      "id": "moshi-latency",
+      "question": "What theoretical latency does the Moshi paper report for its streaming architecture?",
+      "answerability": "answerable",
+      "expected_papers": ["2410.00037v1"],
+      "rationale": "Requires the reported latency with its exact qualification and unit.",
+      "origin": "assistant_draft"
+    },
+    {
+      "id": "moshi-hierarchical-transformer",
+      "question": "Why does Moshi combine a temporal Transformer with a depth Transformer?",
+      "answerability": "answerable",
+      "expected_papers": ["2410.00037v1"],
+      "rationale": "Targets the hierarchy used to model time steps and codebook depth.",
+      "origin": "assistant_draft"
+    },
+    {
+      "id": "moshi-training-cost",
+      "question": "What exact dollar amount did the authors spend to train Moshi?",
+      "answerability": "unanswerable",
+      "expected_papers": [],
+      "rationale": "Deliberate insufficient-evidence question; compute descriptions are not a dollar bill.",
+      "origin": "assistant_draft"
+    },
+    {
+      "id": "hnet-dynamic-chunking",
+      "question": "How does H-Net learn dynamic chunk boundaries during end-to-end training?",
+      "answerability": "answerable",
+      "expected_papers": ["2507.07955v2"],
+      "rationale": "Targets routing-based learned chunking in the hierarchical sequence model.",
+      "origin": "assistant_draft"
+    },
+    {
+      "id": "hnet-tokenization",
+      "question": "What limitation of fixed tokenization is Dynamic Chunking intended to address?",
+      "answerability": "answerable",
+      "expected_papers": ["2507.07955v2"],
+      "rationale": "Checks the motivation for replacing fixed pre-tokenization with learned compression.",
+      "origin": "assistant_draft"
+    },
+    {
+      "id": "hnet-hierarchy",
+      "question": "What information moves through the stages of H-Net's hierarchical architecture?",
+      "answerability": "answerable",
+      "expected_papers": ["2507.07955v2"],
+      "rationale": "Requires architecture-specific evidence about downsampling and upsampling stages.",
+      "origin": "assistant_draft"
+    },
+    {
+      "id": "hnet-rag-confusion",
+      "question": "Which PDF chunk size does the Dynamic Chunking paper recommend for retrieval-augmented generation?",
+      "answerability": "unanswerable",
+      "expected_papers": [],
+      "rationale": "Failure probe: its sequence-model chunks are not RAG document chunks.",
+      "origin": "assistant_draft"
+    },
+    {
+      "id": "cross-paper-moshi-transformer",
+      "question": "What Moshi benchmark result is reported by the authors of Attention Is All You Need?",
+      "answerability": "unanswerable",
+      "expected_papers": [],
+      "rationale": "Cross-paper temporal impossibility designed to expose keyword-driven conflation.",
+      "origin": "assistant_draft"
+    },
+    {
+      "id": "cross-paper-common-technique",
+      "question": "How do Moshi and H-Net each use hierarchical modelling, and what is different about their objectives?",
+      "answerability": "answerable",
+      "expected_papers": ["2410.00037v1", "2507.07955v2"],
+      "rationale": "Multi-paper synthesis requiring evidence from both later papers.",
+      "origin": "assistant_draft"
+    }
+  ]
+}
